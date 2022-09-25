@@ -94,6 +94,7 @@ const onEntry = entries => {
       requestFunc()
         .then(data => {
           renderFunc(data);
+          scrollNewPage();
           page += 1;
         })
         .catch(error => console.log(error));
@@ -105,3 +106,15 @@ const options = {
 };
 const observer = new IntersectionObserver(onEntry, options);
 observer.observe(watchman);
+
+// slow scroll
+function scrollNewPage() {
+  const { height: cardHeight } = document
+    .querySelector('.gallery')
+    .firstElementChild.getBoundingClientRect();
+
+  window.scrollBy({
+    top: cardHeight * 2,
+    behavior: 'smooth',
+  });
+}
