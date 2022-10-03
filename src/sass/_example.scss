@@ -91,4 +91,17 @@ img{
   text-align: center;
 }
 
+.text{
+  font-size: 30px;
+  color: rgb(230, 151, 47);
 
+  text-align: center;
+  margin-top: 50px;
+}
+.vis-hid {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 0;
+  height: 0;
+  margin: -1px;
+}

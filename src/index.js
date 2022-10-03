@@ -7,6 +7,7 @@ import { requestFunc, searchParams } from './js/request';
 const form = document.querySelector('#search-form');
 const galleryList = document.querySelector('.gallery');
 const watchman = document.querySelector('#watchman');
+const text = document.querySelector('.text');
 let page = 1;
 
 // css
@@ -23,6 +24,10 @@ let lightbox = new SimpleLightbox('.gallery a', {
 });
 
 Notify.init({ distance: '100px' });
+//
+function textHidden() {
+  text.classList.add('vis-hid');
+}
 
 // main event
 
@@ -31,6 +36,7 @@ form.addEventListener('submit', onSubmitEvent);
 function onSubmitEvent(e) {
   e.preventDefault();
   clearFunc();
+  textHidden();
 
   const inputValue = form.firstElementChild.value;
 
